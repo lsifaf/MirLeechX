@@ -44,11 +44,10 @@ def stats(update, context):
 
 
 def start(update, context):
-    
-    
-
-
-if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
+    buttons = button_build.ButtonMaker()
+    buttons.buildbutton("Happy Mirroring", "https://google.com")
+    reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
+    if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
 This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
