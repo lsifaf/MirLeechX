@@ -89,7 +89,7 @@ class QbitTorrent:
             self.updater = setInterval(self.update_interval, self.update)
             if BASE_URL is not None and qbitsel:
                 if not is_file:
-                    meta = sendMessage("Downloading Metadata...Please wait then you can select files or mirror Torrent file if it have low seeders", listener.bot, listener.update)
+                    meta = sendMessage("Downloading Metadata...Please wait then you can select your  files", listener.bot, listener.update)
                     while True:
                             tor_info = self.client.torrents_info(torrent_hashes=self.ext_hash)
                             if len(tor_info) == 0:
@@ -121,7 +121,7 @@ class QbitTorrent:
                 buttons.sbutton("Pincode", pindata)
                 buttons.sbutton("Done Selecting", donedata)
                 QBBUTTONS = InlineKeyboardMarkup(buttons.build_menu(2))
-                msg = "Your download paused. Choose files then press Done Selecting button to start downloading."
+                msg = "Your download paused. Choose files then press Done Selecting and return here to start downloading."
                 sendMarkup(msg, listener.bot, listener.update, QBBUTTONS)
             else:
                 sendStatusMessage(listener.update, listener.bot)
