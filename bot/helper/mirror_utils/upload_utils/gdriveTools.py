@@ -774,9 +774,9 @@ class GoogleDriveHelper:
 
         for content in self.telegraph_content :
             self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                    title = 'MirLeechX Search',
-                                                    author_name='MirLeechX',
-                                                    author_url='https://github.com/iamLiquidX/MirLeechX',
+                                                    title = 'JKxTorrents Search',
+                                                    author_name='JKxtorrent',
+                                                    author_url='https://google.com',
                                                     html_content=content
                                                     )['path'])
 
